@@ -1,7 +1,7 @@
-import React from 'react';
-import { ActualItem, Item } from './styles';
+import React from "react";
+import { ActualItem, Item } from "./styles";
 
-export default function MarketItem({item}) {
+export default function MarketItem({ item }) {
     return (
         <ActualItem>
             <Item>Nome: {item.nome}</Item>

@@ -7,7 +7,7 @@ import {
     Input,
     QuantityInput,
     Quantity,
-    Button,
+    QuantityButton,
     ResetButton,
 } from "./styles";
 import { AiOutlinePlusCircle, AiOutlineMinusCircle } from "react-icons/ai";
@@ -18,6 +18,7 @@ export default function Market() {
     const [price, setPrice] = useState("");
     const [quantity, setQuantity] = useState(0);
     const [actualItem, setActualItem] = useState({});
+    const [available, setAvailable] = useState(false);
 
     function Increment() {
         setQuantity(quantity + 1);
@@ -44,6 +45,12 @@ export default function Market() {
             preco: price,
             quantidade: quantity,
         });
+
+        if (!name || !price || quantity === 0) {
+            setAvailable(false);
+        } else {
+            setAvailable(true);
+        }
     }, [name, price, quantity]);
 
     return (
@@ -59,18 +66,22 @@ export default function Market() {
                     <Input
                         placeholder="Preço"
                         value={price}
-                        onChange={(event) => setPrice(event.currentTarget.value)}
+                        onChange={(event) =>
+                            setPrice(event.currentTarget.value)
+                        }
                     />
                     <QuantityInput>
                         <Quantity>{quantity} unidade(s)</Quantity>
-                        <Button onClick={Increment}>
+                        <QuantityButton onClick={Increment}>
                             <AiOutlinePlusCircle size="30px" />
-                        </Button>
-                        <Button onClick={Decrement}>
+                        </QuantityButton>
+                        <QuantityButton onClick={Decrement}>
                             <AiOutlineMinusCircle size="30px" />
-                        </Button>
+                        </QuantityButton>
                     </QuantityInput>
-                    <ResetButton onClick={Reset}>Reset</ResetButton>
+                    <ResetButton onClick={Reset} availableColor={available}>
+                        Reset
+                    </ResetButton>
                 </MarketList>
                 <MarketItem item={actualItem} />
             </ContainerContent>

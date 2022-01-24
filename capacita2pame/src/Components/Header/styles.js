@@ -13,7 +13,7 @@ export const HeaderName = styled.h1`
     color: antiquewhite;
 `;
 
-export const HeaderMenu = styled.div`
+export const HeaderMenu = styled.li`
     display: flex;
     gap: 5vh;
     padding-right: 3%;
@@ -26,11 +26,4 @@ export const MenuItem = styled.h3`
         color: springgreen;
         border-bottom: 2px solid silver;
     }
-`;
-
-export const MenuItemSelected = styled.h3`
-    height: 5vh;
-    cursor: pointer;
-    color: springgreen;
-    border-bottom: 2px solid silver;
 `;

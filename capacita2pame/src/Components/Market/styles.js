@@ -6,10 +6,10 @@ export const Container = styled.div`
     flex-direction: column;
     align-items: center;
     width: 100%;
-    gap: 4vh;
+    gap: 6vh;
 `;
 
-export const ContainerName = styled.h2`
+export const ContainerName = styled.h1`
     color: cornflowerblue;
     border-bottom: 1px solid yellowgreen;
 `;
@@ -50,14 +50,19 @@ export const Quantity = styled.p`
     color: goldenrod;
 `;
 
-export const Button = styled.button`
+export const QuantityButton = styled.button`
     background-color: cornflowerblue;
     border: none;
     cursor: pointer;
+    display: flex;
+    padding: 3px;
+    border-radius: 100%;
 `;
 
 export const ResetButton = styled.button`
-    background-color: cornflowerblue;
+    background-color: ${(props) =>
+        props.availableColor ? "cornflowerblue" : "crimson"};
+    color: white;
     border: none;
     cursor: pointer;
     width: 10vw;
