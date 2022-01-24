@@ -61,7 +61,7 @@ export const QuantityButton = styled.button`
 
 export const ResetButton = styled.button`
     background-color: ${(props) =>
-        props.availableColor ? "cornflowerblue" : "crimson"};
+        props.disabled ? "crimson" : "cornflowerblue"};
     color: white;
     border: none;
     cursor: pointer;

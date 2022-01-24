@@ -79,7 +79,7 @@ export default function Market() {
                             <AiOutlineMinusCircle size="30px" />
                         </QuantityButton>
                     </QuantityInput>
-                    <ResetButton onClick={Reset} availableColor={available}>
+                    <ResetButton onClick={Reset} disabled={!available}>
                         Reset
                     </ResetButton>
                 </MarketList>
